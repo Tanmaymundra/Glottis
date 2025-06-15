@@ -155,5 +155,7 @@ function deepSet(obj: any, keyPath: string, value: string) {
 }
 
 function delay(ms: number) {
-	return new Promise(resolve => setTimeout(resolve, ms));
+        return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+export { flattenJSON, deepSet };
