@@ -55,7 +55,8 @@ export function activate(context: vscode.ExtensionContext) {
 			const diagnostics: vscode.Diagnostic[] = [];
 			for (const key of missingKeys) {
 				const text = document.getText();
-				const line = text.split('\n').findIndex(l => l.includes('{')); // crude fallback to line 1
+                                const index = text.split('\n').findIndex(l => l.includes('{'));
+                                const line = index === -1 ? 0 : index; // fallback to first line
 				const range = new vscode.Range(line, 0, line, 0);
 				diagnostics.push(new vscode.Diagnostic(range, `Missing key: ${key}`, vscode.DiagnosticSeverity.Warning));
 			}
