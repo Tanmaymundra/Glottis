@@ -1,71 +1,53 @@
-# glottis README
+# Glottis
 
-This is the README for your extension "glottis". After writing up a brief description, we recommend including the following sections.
+Glottis is a VS Code extension that helps keep your JSON translation files in sync across multiple languages. It detects missing keys, creates placeholders for them, and shows a diff preview before applying any changes.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Select multiple language JSON files and choose one as the reference
+- Highlights missing keys for the other files using diagnostics
+- Generates placeholder values (`MISSING_TRANSLATION`) for absent keys
+- Shows side-by-side diffs of the original and updated files before changes are applied
+- Outputs a summary of all missing keys
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Clone this repository and install dependencies:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+   ```bash
+   npm install
+   ```
 
-## Requirements
+2. Compile the extension:
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+   ```bash
+   npm run compile
+   ```
 
-## Extension Settings
+3. Launch the extension from VS Code by pressing `F5` to open a new Extension Development Host window.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Usage
 
-For example:
+1. Open the command palette (`Ctrl+Shift+P` / `Cmd+Shift+P`).
+2. Run **`Fix Missing Translation Keys`**.
+3. Select two or more translation JSON files. The first file is used as the reference.
+4. Review the diff previews. Confirm to apply the placeholder values for missing keys.
 
-This extension contributes the following settings:
+## Development
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+- `npm run watch` – compile TypeScript in watch mode
+- `npm test` – run extension tests
 
-## Known Issues
+## Roadmap
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Planned improvements include:
 
-## Release Notes
+- Configuration options for custom placeholder text
+- Support for more file formats (e.g. YAML)
+- Automatic detection of translation files in the workspace
 
-Users appreciate release notes as you update your extension.
+Contributions and feedback are welcome. Please open an issue or pull request with your ideas.
 
-### 1.0.0
+## License
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
